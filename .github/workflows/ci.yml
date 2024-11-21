@@ -1,0 +1,20 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Trigger the workflow on push to the main branch
+
+jobs:
+  deploy:
+    runs-on: self-hosted  # Use your self-hosted runner on Windows
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+
+      - name: Run PowerShell script locally
+        run: |
+          cd C:\inetpub\wwwroot\ptmkb
+          git pull origin main
+          powershell -ExecutionPolicy Bypass -File C:\path\to\your\script.ps1
