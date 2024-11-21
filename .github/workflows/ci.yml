@@ -15,6 +15,7 @@ jobs:
 
       - name: Run PowerShell script locally
         run: |
-          cd C:\inetpub\wwwroot\ptmkb
+          cd C:\inetpub\wwwroot\ptmkb\webhook_listener
           git pull origin main
-          powershell -ExecutionPolicy Bypass -File C:\path\to\your\script.ps1
+          echo "Hello There!"
+          # powershell -ExecutionPolicy Bypass -File C:\path\to\your\script.ps1
